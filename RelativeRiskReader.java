@@ -1,7 +1,6 @@
 /*
-*Imports other programs to this program to be used
-*
-*/
+ * Imports other programs to this program to be used
+ */
 import java.util.List;         
 import java.util.ArrayList;        
 import java.util.regex.Pattern;         
@@ -10,15 +9,15 @@ import java.io.BufferedReader;
 import java.io.IOException;       
 
 /*
-*This is the name of the ENTIRE file, which is :RelativeRiskReader
-*Note the class name and saved file name MUST be the SAME
-*
-*/
+ * This is the name of the ENTIRE file, which is: RelativeRiskReader
+ * Note the class name and saved file name MUST be the SAME
+ */
 public class RelativeRiskReader { 
+    
 /*
-* in every java code you gotta have a main, this is the exact way you want it for basics
-*
-*/
+ * This is the main method, this is what runs when you run:
+ * java RelativeRiskReader filename
+ */
     public static void main(String[] args) {
         
         String filename = args[0];
@@ -49,9 +48,8 @@ public class RelativeRiskReader {
     }
     
     /*
-     *Method that takes in a text and manipulates it
-     *throws exception if problem occurs
-     *
+     * Method that takes in a text and manipulates it
+     * Throws exception if problem occurs
      */
     public void processLine(String line) throws ProgramException {
         String comma = Pattern.quote(",");
@@ -71,8 +69,7 @@ public class RelativeRiskReader {
     }
     
     /*
-     * //shows your output from input(what will show you in the terminal
-     * 
+     * Shows your output from input (what will be displayed in the terminal)
      */
     public void displayRisk(String name, int a, int b, int c, int d) throws ProgramException {)
         System.out.println(name + ": " + String.format("%s, %s, %s, %s", a, b, c, d));
@@ -83,9 +80,8 @@ public class RelativeRiskReader {
         System.out.println(" ");
     }
     /*
-    *Calculates all the math
-    *
-    */
+     * Calculates all the math for relative risk
+     */
     public double calculateRelativeRisk(int an, int bn, int cn, int dn) throws ProgramException {
         double a = (double) an;
         double b = (double) bn;
@@ -116,21 +112,21 @@ public class RelativeRiskReader {
         double d = (double) dn;
         return fishersExactTest(a, b, c, d);
     }
+    
     /*
-    *calculation of P-Value equation
-    *
-    */
+     * Calculation of P-Value equation
+     */
     public double fishersExactTest(double a, double b, double c, double d){
         double n = a + b + c + d;
         double num = factorial(a + b) * factorial(c + d) * factorial(a + c) * factorial(b + d);
         double den = factorial(a) * factorial(b) * factorial(c) * factorial(d) * factorial(n);
         double p = num / den;
         return p;
-    }  
+    } 
+    
     /*
-    *factorial method use for this method 
-    *
-    */
+     * Factorial method use for this method 
+     */
     public static double factorial(double n){
         double res = 1;
         while (n > 0) {
@@ -140,8 +136,10 @@ public class RelativeRiskReader {
         return res;
     }
     
-    //Everything below is something you dont need to know right now
-    ////////////////////////////////////////////////////////////////////////////
+    /*
+     * Reads in data from a text file
+     * This looks complicated, but you don't need to worry about its specifics
+     */
     public static List<String> readFileLines(String filename) throws ProgramException {
         List<String> lines = new ArrayList<String>();
         FileReader fr = null;
