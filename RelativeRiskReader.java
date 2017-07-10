@@ -69,7 +69,7 @@ public class RelativeRiskReader { //This is the name of the ENTIRE file, which i
         }
     }
     
-    public void displayRisk(String name, int a, int b, int c, int d) throws ProgramException {//shows your output from input
+    public void displayRisk(String name, int a, int b, int c, int d) throws ProgramException {//shows your output from input(what will show you in the terminal)
         System.out.println(name + ": " + String.format("%s, %s, %s, %s", a, b, c, d));
         double risk = calculateRelativeRisk(a, b, c, d);
         double p = calculatePValue(a, b, c, d);
