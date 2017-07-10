@@ -1,9 +1,16 @@
-import java.util.List;
-import java.util.ArrayList;
-import java.util.regex.Pattern;
-import java.io.FileReader;
-import java.io.BufferedReader;
-import java.io.IOException;
+//<--------------This double slashes are used to write what ever you want
+//               in the code without affecting everything (only comments one line)
+
+
+/* <--- alternative way to comment (mostly used) (comments multiple lines)
+*/ 
+
+import java.util.List;//            
+import java.util.ArrayList;//           
+import java.util.regex.Pattern;//     all of these import are like copyrights       
+import java.io.FileReader;//          you need to use certain commands
+import java.io.BufferedReader;//            
+import java.io.IOException;//           
 
 public class RelativeRiskReader {
 
